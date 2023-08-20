@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "17577619-a1c2-4279-bfae-8524f5baa8e8",
+		"name": "api-superflights",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12696666"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"David LL\",\r\n    \"username\": \"DLL\",\r\n    \"email\": \"davill@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v2/user"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Reinita Villalobos\",\r\n    \"username\": \"Reyiii23\",\r\n    \"email\": \"lovita@gmail.com\",\r\n    \"password\": \"12334\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/user/64daf7cf0706516d01b44e52"
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{local}}/api/v2/user"
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{local}}/api/v1/user/64daf4162a8b99e101099236"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{local}}/api/v1/user/64daf7cf0706516d01b44e52"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "passenger",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ricardo Forp\",\r\n    \"email\": \"Rriirir@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v2/passenger"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Juan Carlos\",\r\n    \"email\": \"Carlos@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/passenger/64dc3177180e1adddbaec174"
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{tokenf}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/passenger"
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/passenger/64dc2e703a6f6381f6a45c95"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/passenger"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flight",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pilot\": \"Robert\",\r\n    \"airplane\": \"Airbus a34s0\",\r\n    \"destinationCity\": \"Canassda\",\r\n    \"flightDate\": \"2022-01-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/flight"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pilot\": \"Andres Peralta\",\r\n    \"airplane\": \"Airbus a343022312\",\r\n    \"destinationCity\": \"Canada\",\r\n    \"flightDate\": \"2021-01-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/flight/64dc3dc9440c8e866eaf4113"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Passenger",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/flight/64dc4c0e4df8618c11b25a0f/passenger/64dc53996fdae9c83569a86a"
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{tokenf}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/flight/"
+					},
+					"response": []
+				},
+				{
+					"name": "Find One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pilot\": \"Andres\",\r\n    \"airplane\": \"Airbus a340\",\r\n    \"destinationCity\": \"Canada\",\r\n    \"flightDate\": \"2021-01-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/flight/64dc3dc9440c8e866eaf4113"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pilot\": \"Andres\",\r\n    \"airplane\": \"Airbus a340\",\r\n    \"destinationCity\": \"Canada\",\r\n    \"flightDate\": \"2021-01-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/flight/64dc3dc9440c8e866eaf4113"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Ren98\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v2/auth/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"MicroPrueba\",\r\n    \"username\": \"microprueba\",\r\n    \"email\": \"microprueba@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v2/auth/signup"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Microservicios",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "Find All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{endpoint}}/api/{{version}}/user"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
