@@ -4,10 +4,9 @@ services:
   app:
     image: grochoa/app_vuelos:v2
     container_name: app_vuelos
-    env_file:
-      - .env
-    ports: 
-       - 80:3000
+    env_file: .env
+    ports:
+      - 80:3000
     depends_on:
       - mongodb
       - rabbitmq
@@ -17,9 +16,8 @@ services:
 
   microservice-flight:
     image: grochoa/microservice-flight:v2
-    container_name: microservice-flight 
-    env_file:
-      - .env
+    container_name: microservice-flight
+    env_file: .env
     depends_on:
       - mongodb
       - rabbitmq
@@ -30,7 +28,7 @@ services:
   microservice-passengers:
     image: grochoa/microservice-passengers:v2
     container_name: microservice-passengers
-      - .env
+    env_file: .env
     depends_on:
       - mongodb
       - rabbitmq
@@ -41,8 +39,7 @@ services:
   microservice-users:
     image: grochoa/microservice-users:v2
     container_name: microservice-users
-    env_file:
-      - .env
+    env_file: .env
     depends_on:
       - mongodb
       - rabbitmq
@@ -53,8 +50,8 @@ services:
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rmq
-    expose: 
-      - 5672 
+    expose:
+      - 5672
       - 15672
     restart: always
     networks:

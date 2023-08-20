@@ -6,9 +6,8 @@ services:
     container_name: app_vuelos
     build:
       context: ./api-gateway
-      dockerfile: dockerfile
-    env_file:
-      - .env
+      dockerfile: Dockerfile
+    env_file: .env
     ports: 
       - 80:3000
     depends_on:
@@ -23,9 +22,8 @@ services:
     container_name: microservice-flight
     build:
       context: ./microservice-flights
-      dockerfile: dockerfile
-    env_file:
-      - .env
+      dockerfile: Dockerfile
+    env_file: .env
     depends_on:
       - mongodb
       - rabbitmq
@@ -38,9 +36,8 @@ services:
     container_name: microservice-passengers
     build:
       context: ./microservice-passengers
-      dockerfile: dockerfile
-    env_file:
-      - .env
+      dockerfile: Dockerfile
+    env_file: .env
     depends_on:
       - mongodb
       - rabbitmq
@@ -53,9 +50,8 @@ services:
     container_name: microservice-users
     build:
       context: ./microservice-users
-      dockerfile: dockerfile
-    env_file:
-      - .env
+      dockerfile: Dockerfile
+    env_file: .env
     depends_on:
       - mongodb
       - rabbitmq
